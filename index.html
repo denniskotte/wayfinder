@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayfinder - Navigate Your Career</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #4e96cd;
+            --dark-color: #2c3e50;
+            --light-color: #eef7fe;
+            --logo-bg-color: #eef7fe;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color);
+        }
+        .header {
+            background-color: var(--logo-bg-color);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            background-color: var(--logo-bg-color);
+        }
+        .logo {
+            max-width: 100px;
+            height: auto;
+            margin-right: 1rem;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 2rem auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .form-container, .results-container {
+            flex: 1;
+            padding: 2rem;
+        }
+        .form-container {
+            border-right: 1px solid #eee;
+        }
+        h1, h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-top: 1rem;
+            color: var(--dark-color);
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+        .job-card {
+            background-color: var(--light-color);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .progress-bar {
+            background-color: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+        .progress {
+            background-color: var(--secondary-color);
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .form-container {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+        }
+    </style>
+</head>
+<body>    
+    <div class="container">
+        <div class="form-container">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="/img/logo.jpg" alt="Wayfinder Logo" class="logo">
+                    <h1>Wayfinder</h1>
+                </div>
+            </div>
+            <form id="wayfinderForm">
+                <label for="currentJob">Current Job:</label>
+                <input type="text" id="currentJob" required>
+                
+                <label for="salary">Current Salary:</label>
+                <input type="number" id="salary" required>
+                
+                <label for="education">Highest Education:</label>
+                <input type="text" id="education" required>
+                
+                <label for="skill1">Skill 1:</label>
+                <input type="text" id="skill1">
+                
+                <label for="skill2">Skill 2:</label>
+                <input type="text" id="skill2">
+                
+                <label for="skill3">Skill 3:</label>
+                <input type="text" id="skill3">
+                
+                <label for="notes">Additional Notes:</label>
+                <textarea id="notes" rows="3"></textarea>
+                
+                <button type="submit">Find My Path</button>
+            </form>
+        </div>
+        
+        <div class="results-container">
+            <h2 id="resultsTitle" style="display: none;">Your Career Opportunities</h2>
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('wayfinderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            findPath();
+        });
+
+        function findPath() {
+            const formData = {
+                currentJob: document.getElementById('currentJob').value,
+                salary: document.getElementById('salary').value,
+                education: document.getElementById('education').value,
+                skills: [
+                    document.getElementById('skill1').value,
+                    document.getElementById('skill2').value,
+                    document.getElementById('skill3').value
+                ].filter(Boolean),
+                notes: document.getElementById('notes').value
+            };
+            
+            document.getElementById('results').innerHTML = '<p>Analyzing your profile...</p>';
+            document.getElementById('resultsTitle').style.display = 'block';
+            setTimeout(() => {
+                const results = {
+                    suggestedJobs: [
+                        {
+                            title: 'AI Ethics Consultant',
+                            requirements: ['Understanding of AI/ML', 'Ethical framework knowledge', 'Communication skills'],
+                            salary: '$90,000 - $120,000',
+                            matchPercentage: 85,
+                            trainingNeeded: ['Ethics in AI course', 'Advanced ML workshop']
+                        },
+                        {
+                            title: 'Data Storyteller',
+                            requirements: ['Data analysis', 'Visualization tools', 'Narrative creation'],
+                            salary: '$75,000 - $100,000',
+                            matchPercentage: 70,
+                            trainingNeeded: ['Advanced data visualization', 'Storytelling techniques']
+                        }
+                    ]
+                };
+                displayResults(results);
+            }, 1000);
+        }
+
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+            
+            results.suggestedJobs.forEach(job => {
+                const jobCard = document.createElement('div');
+                jobCard.className = 'job-card';
+                jobCard.innerHTML = `
+                    <h3>${job.title}</h3>
+                    <p>Salary: ${job.salary}</p>
+                    <p>Match: ${job.matchPercentage}%</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: ${job.matchPercentage}%"></div>
+                    </div>
+                    <h4>Requirements:</h4>
+                    <ul>
+                        ${job.requirements.map(req => `<li>${req}</li>`).join('')}
+                    </ul>
+                    <h4>Recommended Training:</h4>
+                    <ul>
+                        ${job.trainingNeeded.map(training => `<li>${training}</li>`).join('')}
+                    </ul>
+                `;
+                resultsDiv.appendChild(jobCard);
+            });
+        }
+    </script>
+</body>
+</html>
