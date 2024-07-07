@@ -27,18 +27,27 @@
             align-items: center;
             justify-content: flex-start;
         }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            background-color: var(--logo-bg-color);
-        }
         .logo {
             max-width: 100px;
             height: auto;
             margin-right: 1rem;
         }
+        .title-container {
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+        .slogan {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-top: 0.25rem;
+        }
         .container {
             display: flex;
+            flex-direction: column;
             max-width: 1200px;
             margin: 2rem auto;
             background-color: white;
@@ -47,13 +56,12 @@
             overflow: hidden;
         }
         .form-container, .results-container {
-            flex: 1;
             padding: 2rem;
         }
         .form-container {
-            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
         }
-        h1, h2 {
+        h2 {
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
@@ -111,25 +119,30 @@
             border-radius: 5px;
             transition: width 0.5s ease-in-out;
         }
-        @media (max-width: 768px) {
+        @media (min-width: 769px) {
             .container {
-                flex-direction: column;
+                flex-direction: row;
             }
             .form-container {
-                border-right: none;
-                border-bottom: 1px solid #eee;
+                border-right: 1px solid #eee;
+                border-bottom: none;
+                flex: 1;
+            }
+            .results-container {
+                flex: 1;
             }
         }
     </style>
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>    
     <div class="container">
         <div class="form-container">
             <div class="header">
-                <div class="logo-container">
-                    <img src="/img/logo.jpg" alt="Wayfinder Logo" class="logo">
+                <img src="img/logo.jpg" alt="Wayfinder Logo" class="logo">
+                <div class="title-container">
                     <h1>Wayfinder</h1>
+                    <p class="slogan">Navigate your career in the age of AI</p>
                 </div>
             </div>
             <form id="wayfinderForm">
@@ -137,7 +150,7 @@
                 <input type="text" id="currentJob" required>
                 
                 <label for="salary">Current Salary:</label>
-                <input type="number" id="salary" required>
+                <input type="number" id="salary" required min="0" step="10000">
                 
                 <label for="education">Highest Education:</label>
                 <input type="text" id="education" required>
