@@ -6,7 +6,7 @@ Wayfinder is a single-page web application designed to suggest alternative caree
 
 ## Live Testing
 
-You can test Wayfinder live by following this [link](https://github.com/denniskotte/wayfinder/edit/main/README.md).
+You can test Wayfinder live by following this [link](https://denniskotte.github.io/wayfinder/).
 
 ## Features
 
