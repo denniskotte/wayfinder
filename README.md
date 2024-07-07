@@ -4,6 +4,10 @@ Wayfinder is a single-page web application designed to suggest alternative caree
 
 ![Wayfinder Screenshot](img/screenshot.png)
 
+## Live Testing
+
+You can test Wayfinder live by following this [link](https://github.com/denniskotte/wayfinder/edit/main/README.md).
+
 ## Features
 
 - **Career Suggestions:** Based on the input information, the app provides alternative career suggestions.
@@ -26,7 +30,7 @@ Wayfinder is a single-page web application designed to suggest alternative caree
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/wayfinder.git
+   git clone https://github.com/denniskotte/wayfinder.git
    ```
 2. Navigate to the project directory:
    ```bash
