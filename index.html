@@ -7,37 +7,37 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
-<body>    
+<body>
     <div class="container">
         <div class="form-container">
-            <div class="header">
+            <header class="header">
                 <img src="img/logo.jpg" alt="Wayfinder Logo" class="logo">
                 <div class="title-container">
                     <h1>Wayfinder</h1>
                     <p class="slogan">Navigate your career in the age of AI</p>
                 </div>
-            </div>
+            </header>
             <form id="wayfinderForm">
                 <label for="currentJob">Current Job:</label>
-                <input type="text" id="currentJob" required>
+                <input type="text" id="currentJob" name="currentJob" required>
                 
                 <label for="salary">Current Salary:</label>
-                <input type="number" id="salary" required min="0">
+                <input type="number" id="salary" name="salary" required>
                 
                 <label for="education">Highest Education:</label>
-                <input type="text" id="education" required>
+                <input type="text" id="education" name="education" required>
                 
                 <label for="skill1">Skill 1:</label>
-                <input type="text" id="skill1">
+                <input type="text" id="skill1" name="skill1">
                 
                 <label for="skill2">Skill 2:</label>
-                <input type="text" id="skill2">
+                <input type="text" id="skill2" name="skill2">
                 
                 <label for="skill3">Skill 3:</label>
-                <input type="text" id="skill3">
+                <input type="text" id="skill3" name="skill3">
                 
                 <label for="notes">Additional Notes:</label>
-                <textarea id="notes" rows="3"></textarea>
+                <textarea id="notes" name="notes"></textarea>
                 
                 <button type="submit">Find My Path</button>
             </form>
@@ -45,10 +45,24 @@
         
         <div class="results-container">
             <h2 id="resultsTitle" style="display: none;">Your Career Opportunities</h2>
+            
+            <div class="adsense-container">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5783272107613709"
+                     crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-format="autorelaxed"
+                     data-ad-client="ca-pub-5783272107613709"
+                     data-ad-slot="7215234599"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
             <div id="results"></div>
         </div>
     </div>
-
+    
     <script src="js/form-handler.js"></script>
 
 </body>

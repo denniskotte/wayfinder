@@ -129,3 +129,31 @@ button:hover {
         flex: 1;
     }
 }
+.adsense-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    max-height: 600px; 
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.adsbygoogle {
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+}
+
+#results:not(:empty) + .adsense-container {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .adsense-container {
+        min-height: 40vh;
+    }
+}
