@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get form element
     const wayfinderForm = document.getElementById('wayfinderForm');
 
-    // Add submit event listener to the form
     wayfinderForm.addEventListener('submit', function(e) {
         e.preventDefault();
         findPath();
@@ -21,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             notes: document.getElementById('notes').value
         };
         
+        document.getElementById('results').innerHTML = '';
         document.getElementById('welcome-container').style.display = 'none';
         document.getElementById('resultsTitle').style.display = 'block';
         document.getElementById('statusContainer').innerHTML = '<p>Analyzing your profile...</p>';
@@ -50,14 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('statusContainer').innerHTML = '';
 
         const resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = '';
         
         results.suggestedJobs.forEach(job => {
             const jobCard = document.createElement('div');
             jobCard.className = 'job-card';
             jobCard.innerHTML = `
                 <h3>${job.jobTitle}</h3>
-                <p>Salary: ${job.salaryRange}</p>
+                <p>Annual Salary: ${job.salaryRange} €</p>
                 <p>Match: ${job.matchPercentage}%</p>
                 <div class="progress-bar">
                     <div class="progress" style="width: ${job.matchPercentage}%"></div>

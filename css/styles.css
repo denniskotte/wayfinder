@@ -136,16 +136,13 @@ button:hover {
     background-color: var(--light-color);
     border-radius: 8px;
 }
-
 .hero-container {
     height: 15rem; 
     padding: 0rem 1rem;
 }
-
 .adsense-container {
     height: 23rem; 
 }
-
 .adsbygoogle {
     width: 100%;
     height: 100%;
