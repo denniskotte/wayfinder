@@ -147,3 +147,40 @@ button:hover {
     width: 100%;
     height: 100%;
 }
+summary {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 0.5rem 0; /* More space to the top */
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start */
+}
+
+summary::before {
+    content: "▶"; /* Right arrow symbol */
+    font-size: 0.8rem;
+    margin-right: 0.5rem; /* Space between the arrow and text */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    transform: rotate(0deg); /* Initial state, pointing right */
+}
+
+details[open] summary::before {
+    transform: rotate(90deg); /* Rotate to down arrow when open */
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+details[open] summary {
+    padding-bottom: 0.5rem; /* Adjusted padding */
+    margin-bottom: 0.5rem;
+}
+
+details {
+    margin-top: 1rem; /* Increased margin for more space above */
+    padding: 0.5rem 0;
+}
