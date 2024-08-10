@@ -69,16 +69,15 @@ h1 {
     background-color: var(--form-bg-color);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Ermöglicht Scrollen, wenn Inhalt größer ist */
 }
 
 .form-container {
-    max-height: 700px;
+    height: 40rem;
     overflow-y: auto; 
 }
 
 .form-wrapper {
-    padding: 0rem 1.5rem 1rem;
+    padding: 1rem 1.5rem;
 }
 
 .results-container {
@@ -125,13 +124,22 @@ button:hover {
     background-color: #3a506b;
 }
 
-#welcomeCard {
+#welcome-card {
     background-color: var(--form-bg-color);
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 0rem 1.5rem 1rem;
     margin-bottom: 1rem;
-    transition: transform 5s ease;
+    transition: transform 0.3s ease;
+}
+
+#status-card {
+    background-color: var(--form-bg-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
 }
 
 .job-card {
@@ -188,12 +196,11 @@ button:hover {
         <div class="content">
             <div class="form-container">
                 <div class="form-wrapper">
-                    <h2>Find Your Path</h2>
                     <form id="wayfinderForm">
                         <label for="currentJob">Current Job:</label>
                         <input type="text" id="currentJob" name="currentJob" required>
                         
-                        <label for="salary">Current Salary:</label>
+                        <label for="salary">Annual Salary:</label>
                         <input type="number" id="salary" name="salary" required>
                         
                         <label for="education">Highest Education:</label>
@@ -217,11 +224,19 @@ button:hover {
             </div>
             
             <div class="results-container">
-                <div id="welcomeCard">
-                    <h2>Welcome</h2>
-                </div>       
+                <div id="welcome-card">
+                    <div class="hero-container">
+                        <h2>Against and with AI</h2>
+                        
+                        <p>As AI reshapes the job landscape, many roles will transform or disappear. We use this same technology to help you discover new career paths tailored to your unique skills and goals in today's rapidly evolving market.</p>
+                      
+                        <p>Just enter your info and our AI will give you up-to-date job ideas, skill lists and learning tips. Your privacy is assured as we don't store any of your data.</p>
+                      
+                        <p>Wayfinder is free to use, no sign-up needed. We keep it free through minimal advertising on this page. Start exploring your future career now!</p>
+                    </div>
+                </div>
 
-                <div id="requestInformation" class="job-card" style="display: none;">
+                <div id="status-card" style="display: none;">
                 
                 </div>         
                 <div id="results"></div>
