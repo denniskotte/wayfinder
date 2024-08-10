@@ -21,8 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
             notes: document.getElementById('notes').value
         };
         
-        document.getElementById('results').innerHTML = '<p>Analyzing your profile...</p>';
-        document.getElementById('resultsTitle').style.display = 'block';
+        document.getElementById('welcomeCard').style.display = 'none';
+
+        const requestInformationDiv = document.getElementById('requestInformation')
+        requestInformationDiv.innerHTML = '<p>Analyzing your profile...</p>';
+        requestInformationDiv.style.display = 'block';
 
         try {
             const response = await fetch('https://5kvvps6264.execute-api.eu-west-2.amazonaws.com/default/wayfinder-gateway', {
@@ -41,14 +44,16 @@ document.addEventListener('DOMContentLoaded', function() {
             displayResults({ suggestedJobs: data });
         } catch (error) {
             console.error('Error:', error);
-            document.getElementById('results').innerHTML = '<p>An error occurred while fetching results. Please try again later.</p>';
+            document.getElementById('requestInformation').innerHTML = '<p>An error occurred while fetching results. Please try again later.</p>';
         }
     }
 
     function displayResults(results) {
+        document.getElementById('requestInformation').style.display = 'none';
+
         const resultsDiv = document.getElementById('results');
         resultsDiv.innerHTML = '';
-        
+
         results.suggestedJobs.forEach(job => {
             const jobCard = document.createElement('div');
             jobCard.className = 'job-card';
