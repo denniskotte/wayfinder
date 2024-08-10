@@ -20,6 +20,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    border-radius: 8px;
 }
 .logo {
     max-width: 80px;
@@ -129,31 +130,23 @@ button:hover {
         flex: 1;
     }
 }
-.adsense-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    max-height: 600px; 
-    margin: 2rem 0;
-    padding: 1rem;
+#welcome-container {  
+    height: 39rem; 
+    padding: 1rem 1rem;
     background-color: var(--light-color);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.hero-container {
+    height: 15rem; 
+    padding: 0rem 1rem;
+}
+
+.adsense-container {
+    height: 23rem; 
 }
 
 .adsbygoogle {
     width: 100%;
-    max-width: 800px;
     height: 100%;
-}
-
-#results:not(:empty) + .adsense-container {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .adsense-container {
-        min-height: 40vh;
-    }
 }
