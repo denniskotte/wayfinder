@@ -1,9 +1,8 @@
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #4e96cd;
-    --te
-    --light-color:  #D2DBC8;
-    --white:  #4A5D5E;
+    --light-color: #eef7fe;
+    --white: white;
 }
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
