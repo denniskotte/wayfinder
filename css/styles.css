@@ -1,8 +1,9 @@
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #4e96cd;
-    --light-color: #eef7fe;
-    --white: white;
+    --te
+    --light-color:  #D2DBC8;
+    --white:  #4A5D5E;
 }
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -146,42 +147,4 @@ button:hover {
 .adsbygoogle {
     width: 100%;
     height: 100%;
-}
-summary {
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: var(--primary-color);
-    cursor: pointer;
-    padding: 0.5rem 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-summary::before {
-    content: "▶";
-    font-size: 0.8rem;
-    margin-right: 0.5rem; 
-    transition: transform 0.3s ease-in-out;
-    transform: rotate(0deg);
-}
-
-details[open] summary::before {
-    transform: rotate(90deg);
-}
-
-summary::-webkit-details-marker {
-    display: none;
-}
-
-details[open] summary {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-details {
-    margin-top: 1rem;
-    padding: 0.5rem 0;
-    border-top: 1px solid #eee;
 }
