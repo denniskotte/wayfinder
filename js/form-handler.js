@@ -5,14 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('wayfinderForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        if (usageCount < 3) {
-            if(usageCount >= 2){
-                findPathButton.disabled = true;
-                findPathButton.textContent = 'Usage Limit Reached';
-            }
-            usageCount++;
-            findPath();
+        
+        findPathButton.disabled = true;
+        if(usageCount >= 2){
+            findPathButton.textContent = 'Usage Limit Reached';
         }
+        usageCount++;
+        findPath();
     });
 
     async function findPath() {
@@ -56,6 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayResults(results) {
+        if (usageCount < 3) {
+            findPathButton.disabled = false;
+        }
+        
         document.getElementById('status-card').style.display = 'none';
 
         const resultsDiv = document.getElementById('results');
