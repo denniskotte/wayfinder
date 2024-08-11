@@ -4,15 +4,17 @@
     --form-bg-color: rgba(255, 255, 255, 0.9);
 }
 body, html {
-    height: auto;
+    height: 100%;
     min-height: 100%;
     margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
 }
 body {
     background-image: url('../img/background.webp');
+    background-color: #000000;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
