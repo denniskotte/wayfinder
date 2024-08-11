@@ -21,8 +21,7 @@ body, html {
 }
 
 body {
-    background-image: url('/img/background.png');  /* Platzhalter für Ihr Hintergrundbild */
-    background-position: center;
+    background-image: url('/img/background.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -35,12 +34,20 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    min-height: 100%; /* Container kann sich nach Bedarf ausdehnen */
+    min-height: 100%;
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 8rem;
+    height: auto;
+    margin-right: 1rem;
 }
 
 h1 {
@@ -81,9 +88,9 @@ h1 {
 }
 
 .results-container {
-    background-color: transparent; /* Hintergrund entfernen */
-    box-shadow: none; /* Schatten entfernen, falls unerwünscht */
-    overflow-y: visible; /* Inhalt kann sich nach unten ausdehnen */
+    background-color: transparent;
+    box-shadow: none;
+    overflow-y: visible;
 }
 
 h2 {
@@ -189,21 +196,23 @@ button:hover {
 <body>
     <div class="container">
         <header class="header">
-            <h1>Wayfinder</h1>
-            <p class="slogan">Navigate your career in the age of AI</p>
+            <img src="img/logo_white.png" alt="Wayfinder Logo" class="logo">
+            <div class="title-container">
+                <h1>Wayfinder</h1>
+                <p class="slogan">Navigate your career in the age of AI</p>
+            </div>
         </header>
-        
         <div class="content">
             <div class="form-container">
                 <div class="form-wrapper">
                     <form id="wayfinderForm">
-                        <label for="currentJob">Current Job:</label>
+                        <label for="currentJob">Current Job:*</label>
                         <input type="text" id="currentJob" name="currentJob" required>
                         
-                        <label for="salary">Annual Salary:</label>
+                        <label for="salary">Annual Salary:*</label>
                         <input type="number" id="salary" name="salary" required>
                         
-                        <label for="education">Highest Education:</label>
+                        <label for="education">Highest Education:*</label>
                         <input type="text" id="education" name="education" required>
                         
                         <label for="skill1">Skill 1:</label>
@@ -226,7 +235,7 @@ button:hover {
             <div class="results-container">
                 <div id="welcome-card">
                     <div class="hero-container">
-                        <h2>Against and with AI</h2>
+                        <h2>Challenge and Opportunity</h2>
                         
                         <p>As AI reshapes the job landscape, many roles will transform or disappear. We use this same technology to help you discover new career paths tailored to your unique skills and goals in today's rapidly evolving market.</p>
                       
