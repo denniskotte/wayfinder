@@ -9,72 +9,64 @@
 </head>
 <body>
     <div class="container">
-        <div class="form-container">
-            <header class="header">
-                <img src="img/logo_alt.jpg" alt="Wayfinder Logo" class="logo">
-                <div class="title-container">
-                    <h1>Wayfinder</h1>
-                    <p class="slogan">Navigate your career in the age of AI</p>
-                </div>
-            </header>
-            <form id="wayfinderForm">
-                <label for="currentJob">Current Job:</label>
-                <input type="text" id="currentJob" name="currentJob" required>
-                
-                <label for="salary">Annual Salary:</label>
-                <input type="number" id="salary" name="salary" required>
-                
-                <label for="education">Highest Education:</label>
-                <input type="text" id="education" name="education" required>
-
-                <label for="skill1">Skill 1:</label>
-                <input type="text" id="skill1" name="skill1">
-                    
-                <label for="skill2">Skill 2:</label>
-                <input type="text" id="skill2" name="skill2">
-                    
-                <label for="skill3">Skill 3:</label>
-                <input type="text" id="skill3" name="skill3">
-                    
-                <label for="notes">Additional Notes:</label>
-                <textarea id="notes" name="notes"></textarea>
-                
-                <button type="submit">Find My Path</button>
-            </form>
-        </div>
-        
-        <div class="results-container">  
-            <div id="welcome-container">
-                <div class="hero-container">
-                    <h2>Against and with AI</h2>
-                    
-                    <p>As AI reshapes the job landscape, many roles will transform or disappear. We use this same technology to help you discover new career paths tailored to your unique skills and goals in today's rapidly evolving market.</p>
-                  
-                    <p>Just enter your info and our AI will give you up-to-date job ideas, skill lists and learning tips. Your privacy is assured as we don't store any of your data.</p>
-                  
-                    <p>Wayfinder is free to use, no sign-up needed. We keep it free through minimal advertising on the page. Start exploring your future career now!</p>
-                </div>
-                <div class="adsense-container">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5783272107613709"
-                         crossorigin="anonymous"></script>
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-format="autorelaxed"
-                         data-ad-client="ca-pub-5783272107613709"
-                         data-ad-slot="7215234599"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+        <header class="header">
+            <img src="img/logo_white.png" alt="Wayfinder Logo" class="logo">
+            <div class="title-container">
+                <h1>Wayfinder</h1>
+                <p class="slogan">Navigate your career in the age of AI</p>
+            </div>
+        </header>
+        <div class="content">
+            <div class="form-container">
+                <div class="form-wrapper">
+                    <form id="wayfinderForm">
+                        <label for="currentJob">Current Job:*</label>
+                        <input type="text" id="currentJob" name="currentJob" required>
+                        
+                        <label for="salary">Annual Salary:*</label>
+                        <input type="number" id="salary" name="salary" required>
+                        
+                        <label for="education">Highest Education:*</label>
+                        <input type="text" id="education" name="education" required>
+                        
+                        <label for="skill1">Skill 1:</label>
+                        <input type="text" id="skill1" name="skill1">
+                        
+                        <label for="skill2">Skill 2:</label>
+                        <input type="text" id="skill2" name="skill2">
+                        
+                        <label for="skill3">Skill 3:</label>
+                        <input type="text" id="skill3" name="skill3">
+                        
+                        <label for="notes">Additional Notes:</label>
+                        <textarea id="notes" name="notes"></textarea>
+                        
+                        <button type="submit">Find My Path</button>
+                    </form>
                 </div>
             </div>
+            
+            <div class="results-container">
+                <div id="welcome-card">
+                    <div class="hero-container">
+                        <h2>Challenge and Opportunity</h2>
+                        
+                        <p>As AI reshapes the job landscape, many roles will transform or disappear. We use this same technology to help you discover new career paths tailored to your unique skills and goals in today's rapidly evolving market.</p>
+                      
+                        <p>Just enter your info and our AI will give you up-to-date job ideas, skill lists and learning tips. Your privacy is assured as we don't store any of your data.</p>
+                      
+                        <p>Wayfinder is free to use, no sign-up needed. We keep it free through minimal advertising on this page. Start exploring your future career now!</p>
+                    </div>
+                </div>
 
-            <h2 id="resultsTitle" style="display: none;">Your Career Opportunities</h2>
-            <div id="statusContainer"></div>
-            <div id="results"></div>
+                <div id="status-card" style="display: none;">
+                
+                </div>         
+                <div id="results"></div>
+            </div>
         </div>
     </div>
-    
-    <script src="js/form-handler.js"></script>
 
+    <script src="js/form-handler.js"></script>
 </body>
 </html>

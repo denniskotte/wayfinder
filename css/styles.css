@@ -1,102 +1,133 @@
 :root {
     --primary-color: #2c3e50;
-    --secondary-color: #4e96cd;
-    --light-color: #eef7fe;
-    --white: white;
+    --text-color: #2c3e50;
+    --form-bg-color: rgba(255, 255, 255, 0.9);
+}
+body, html {
+    height: auto;
+    min-height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
 }
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.4;
-    color: var(--primary-color);
-    margin: 0;
-    padding: 0;
-    background-color: var(--light-color);
-    font-size: 14px;
-}
-.header {
-    background-color: var(--light-color);
-    padding: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 8px;
-}
-.logo {
-    max-width: 80px;
-    height: auto;
-    margin-right: 0.75rem;
-}
-.title-container {
-    display: flex;
-    flex-direction: column;
-}
-h1 {
-    margin: 0;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-}
-.slogan {
-    font-size: 0.8rem;
-    color: var(--secondary-color);
-    margin-top: 0.15rem;
+    background-image: url('/img/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
-    margin: 1rem 1rem;
-    background-color: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    overflow: hidden;
+    min-height: 100%;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.logo {
+    max-width: 8rem;
+    height: auto;
+    margin-right: 1rem;
+}
+h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.slogan {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 0.25rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.content {
+    display: flex;
+    gap: 1rem 4rem;
+    flex-grow: 1;
 }
 .form-container, .results-container {
-    padding: 1.5rem;
+    flex: 1;
+    background-color: var(--form-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .form-container {
-    border-bottom: 1px solid #eee;
+    height: 40rem;
+    overflow-y: auto; 
+}
+.form-wrapper {
+    padding: 1rem 1.5rem;
+}
+.results-container {
+    background-color: transparent;
+    box-shadow: none;
+    overflow-y: visible;
 }
 h2 {
+    font-size: 1.5rem;
     color: var(--primary-color);
-    margin-bottom: 0.75rem;
-    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 label {
     display: block;
     margin-top: 0.75rem;
-    color: var(--primary-color);
+    color: var(--text-color);
     font-weight: bold;
-    font-size: 0.9rem;
 }
 input, textarea {
     width: 100%;
-    padding: 0.4rem;
+    padding: 0.5rem;
     margin-top: 0.25rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 0.9rem;
 }
 button {
     background-color: var(--primary-color);
     color: white;
-    padding: 0.6rem 1.2rem;
+    padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin-top: 1rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
 }
 button:hover {
-    background-color: var(--secondary-color);
+    background-color: #3a506b;
 }
-.job-card {
-    background-color: var(--light-color);
+#welcome-card {
+    background-color: var(--form-bg-color);
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 1.2rem;
-    margin-top: 1rem;
+    padding: 0rem 1.5rem 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+#status-card {
+    background-color: var(--form-bg-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+.job-card {
+    background-color: var(--form-bg-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
     transition: transform 0.3s ease;
 }
 .job-card:hover {
@@ -104,46 +135,27 @@ button:hover {
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 .progress-bar {
-    background-color: #e0e0e0;
+    background-color: 	#d3d3d3;
     height: 8px;
     border-radius: 4px;
     margin-top: 0.75rem;
     overflow: hidden;
 }
 .progress {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     height: 100%;
     border-radius: 4px;
     transition: width 0.5s ease-in-out;
 }
-@media (min-width: 769px) {
-    .container {
-        flex-direction: row;
-        margin: 1.5rem auto;
-    }
-    .form-container {
-        border-right: 1px solid #eee;
-        border-bottom: none;
-        flex: 1;
-    }
-    .results-container {
-        flex: 1;
-    }
-}
-#welcome-container {  
-    height: 39rem; 
-    padding: 1rem 1rem;
-    background-color: var(--light-color);
+.adsense-container {
+    margin-top: 1.5rem;
+    background-color: #eee;
+    padding: 1rem;
+    text-align: center;
     border-radius: 8px;
 }
-.hero-container {
-    height: 15rem; 
-    padding: 1rem 1rem;
-}
-.adsense-container {
-    height: 23rem; 
-}
-.adsbygoogle {
-    width: 100%;
-    height: 100%;
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
 }
