@@ -1,9 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const wayfinderForm = document.getElementById('wayfinderForm');
+ 
+    const findPathButton = document.querySelector('button[type="submit"]');
+    let usageCount = 0;
 
-    wayfinderForm.addEventListener('submit', function(e) {
+    document.getElementById('wayfinderForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        findPath();
+        if (usageCount < 3) {
+            if(usageCount >= 2){
+                findPathButton.disabled = true;
+                findPathButton.textContent = 'Usage Limit Reached';
+            }
+            usageCount++;
+            findPath();
+        }
     });
 
     async function findPath() {
