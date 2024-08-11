@@ -160,21 +160,21 @@ button:hover {
         flex-direction: column;
     }
     h1 {
-        font-size: 2.1em;
+        font-size: 2.1rem;
     }
     .slogan {
-        font-size: 0.6em;
+        font-size: 0.6rem;
     }
 }
 
 @media (max-width: 375px) {
     h1 {
-        font-size: 1.8em;
+        font-size: 1.5rem;
     }
     .slogan {
-        font-size: 0.5em;
+        font-size: 0.4rem;
     }
     #welcome-card{
-        padding: 0rem 1rem;
+        padding: 0.5rem 1rem;
     }
 }
